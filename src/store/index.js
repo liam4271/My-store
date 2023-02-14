@@ -7,7 +7,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        products: []
+        products: [],
+        cart: []
     },
     getters: {
         filteredProducts: (state) => (filter, maxPrice, minPrice) => {
@@ -17,13 +18,16 @@ export default new Vuex.Store({
                 product.price > minPrice
             );
         },
-        getProduct: (state) => (id) => {
-            return state.products.find(products => products.id === id);
-          }
+        addProductToCart ({ commit }, product) {
+            commit('addProductToCart', product)
+          },
     },
     mutations: {
         SET_PRODUCTS(state, products) {
             state.products = products;
           }, 
+        ADD_PRODUCT_TO_CART(state, product) {
+            state.cart.push(product)
+        }
     }
 })
