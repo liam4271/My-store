@@ -17,9 +17,9 @@ export default new Vuex.Store({
                 product.price > minPrice
             );
         },
-        getCountry: (state) => (code) => {
-            return state.products.find(p => p.id === code);
-        }
+        getProduct: (state) => (id) => {
+            return state.products.find(products => products.id === id);
+          }
     },
     mutations: {
         SET_PRODUCTS(state, products) {

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ProductsPage from '../pages/ProductsPage';
+import ProductDetailPage from '../pages/ProductDetailPage';
 
 Vue.use(Router)
 
@@ -17,7 +18,8 @@ const router = new Router({
         {
             path: '/product/:id',
             name: 'product',
-            component: ProductsPage
+            component: ProductDetailPage,
+            props: true
         },
     ]
 });

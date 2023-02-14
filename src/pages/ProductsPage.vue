@@ -24,7 +24,7 @@
                             {{ product.category }} - {{ product.price }}$
                         </div>
                     </div>
-                    <router-link :to="`/product/${product.id}`" class="btn btn-primary">Voir plus</router-link>
+                    <router-link :to="{ name: 'product', params: { id: product.id } }" class="btn btn-primary">Voir plus</router-link>
                 </div>
             </div>
         </div>
